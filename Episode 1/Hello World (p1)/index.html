@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- when we want to manipulate the dom then use the script tag in last of the body element but if we want to use script in head tag then -->
+    <!-- use the DOMContentLoaded eventListner && pass the js code inside its callback this will fire when the html is completly avialable for manipulate -->
+    <!-- defer keyword is working as expected because it does not wait for html elements for completly render or accible for manipulation it start immidiate after the html parsing -->
+    <script>
+        document.addEventListener("DOMContentLoaded",function(){
+        const mainDiv = document.getElementById("main");
+        console.log("mainDiv is:",mainDiv);
+        })
+    </script>
+
+    <title>Namaste React</title>
+</head>
+<body>
+    <div id="main">
+        <h1>Hello from the HTML</h1>
+    </div>
+
+    <!-- root div for the react where it render the components or code -->
+    <div id="root"></div>
+
+    <!-- write html by the js -->
+    <script>
+        const heading1 = document.createElement("h1");
+        heading1.innerHTML = "Hello from the JS";
+        console.log("heading1 is:",heading1); // this is a h1 element of html like <h1>Hello from the js</h1>
+
+        const mainDiv = document.getElementById("main");
+        mainDiv.appendChild(heading1); 
+    </script>
+
+    <!-- import the react and react-dom by CDN links and use react below this -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- we can sell the main object of React and ReactDOM (where we see all the properites of these) -->
+
+    <!-- write html by react js -->
+     <script>
+        // createElement is the core fn of react 
+        // it will create a element(which pass as 1st parameter), assign the atributes to it(which pass as the 2nd parametr obj) and a also assign value to it(as the 3rd parameter) not need innerHtml property like in js
+        const heading2 = React.createElement("h1", { id:"fromReact" }, "Hello from the React");
+        console.log("heading2 is:",heading2); // this is a js/react object not a html element like in simple js yet it can be converted into element by React.render() method
+
+        // createRoot fn is from the reactDom(this will responsible for doing all the stuf related to dom manipulation)
+        // this will create a root where all the react code will exicuted and render
+        // this need a empty container/div for render if something is present on this div it will overwrite that (only react content is render on this div)
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+
+        // what you want to render on ui
+        // this is responsible for the converting js object to the html element and push it into the root div so that browser will understand
+        root.render(heading2);
+     </script>
+</body>
+</html>
