@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.card {
+    width: 150px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.card:hover{
+    box-shadow: 0px 0px 15px  gray;
+}
+
+.imgDiv {
+    width: 100%;
+    height: 100px;
+    overflow: hidden; 
+    margin-bottom: 10px;
+}
+
+.foodImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center; 
+    border-radius: 10px; 
+}
+
+.lowerDiv{
+    margin-left: 5px;
+    padding-bottom: 5px;
+    font-size: smaller;
+}
+
+.outerDiv{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;    
+}
+
+.mainDiv{
+    margin: 5% 15%;
+}
+
+.resName{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.time {
+    font-weight: 700;
+}
+
+.location {
+    color: gray;
+}
+
+/* navbar */
+
+.navbar{
+    display: flex ;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color:#9f9f9f;
+}
+
+.navItem{
+    display: flex;
+    list-style: none;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.navItem li{
+    margin-left: 15px;
+    color: black;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+/* card css */
+
+.recommendedCards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 66vw;
+    margin: 2% 17% ;
+    padding-left: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.recommendedCards:hover{
+    box-shadow: 0px 0px 15px  gray;
+}
+
+.recImg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center; 
+    border-radius: 10px; 
+}
+
+.recImgDiv{
+    height: 100px;
+    overflow: hidden; 
+    margin-bottom: 10px;
+}
+
+.recText{
+    flex-grow: 1;
+}
